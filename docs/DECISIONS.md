@@ -44,3 +44,11 @@ The contrast check showed that spec status colors fail AA as normal text. Succes
 - **Semantic roles** (`bg`, `surface`, `surface-strong`, `border`, `fg`, `fg-muted`, `fg-subtle`, `fg-disabled`, `inverse-bg`, `inverse-fg`) are CSS variables. Wrapping any block in `.dark-section` flips them for the dark landing sections and the footer. Components should use roles, not raw grays.
 - `fg-muted` is gray-600, because gray-500 fails AA on gray-50 and gray-100. `fg-subtle` (gray-500) is allowed only on the page background.
 - **Additions not in the spec** (proposed here): breakpoints are Tailwind's defaults (sm 640, md 768, lg 1024, xl 1280). Gutters are 16px on mobile and 24px on desktop. The overlay shadow is `0 8px 24px rgba(0,0,0,.16)`. Ease-out is `cubic-bezier(0,0,.2,1)`. Font sizes and line heights are in rem so browser zoom and font settings work.
+
+## 2026-10-23 — i18n
+
+- next-intl 4 with `localePrefix: "always"`. Every URL carries `/ro` or `/en`. `/` redirects by `Accept-Language` or the `NEXT_LOCALE` cookie, with `ro` as the fallback.
+- Message files are split per feature (`common`, `nav`, …) and registered in `packages/i18n/src/index.ts`. `Messages` is typed from the ro files, so a missing key is a type error and a ro/en mismatch fails a test.
+- English formatting uses `en-GB` (dd/mm/yyyy, "RON 1,234.50"). The spec only fixes the ro formats. All dates render in `Europe/Bucharest`.
+- Currency renders as "RON", the Intl default for ro-RO, not "lei". This can be changed in one place if preferred.
+- `react/jsx-no-literals` blocks hard-coded text in JSX. Brand name and locale codes also come from config or messages.

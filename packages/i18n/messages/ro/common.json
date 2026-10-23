@@ -1,0 +1,13 @@
+{
+  "metadata": {
+    "description": "Închiriază o mașină pentru ridesharing sau listează mașina ta. Contracte standard, plăți săptămânale."
+  },
+  "home": {
+    "status": "Site în construcție."
+  },
+  "notFound": {
+    "title": "Pagina nu există.",
+    "body": "Verifică adresa sau mergi la pagina principală.",
+    "home": "Pagina principală"
+  }
+}

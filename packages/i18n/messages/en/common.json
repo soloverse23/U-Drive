@@ -1,0 +1,13 @@
+{
+  "metadata": {
+    "description": "Rent a car for ridesharing or list your car. Standard contracts, weekly payments."
+  },
+  "home": {
+    "status": "Site under construction."
+  },
+  "notFound": {
+    "title": "Page not found.",
+    "body": "Check the address or go to the home page.",
+    "home": "Home page"
+  }
+}
