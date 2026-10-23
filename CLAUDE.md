@@ -38,6 +38,7 @@ pnpm + Turborepo monorepo. Internal packages export TypeScript source directly (
 
 - **No invented numbers.** Every market, fee, tax or price value is a `ConfigValue` (`packages/core/src/config/types.ts`): `{ value, unit, source, sourceUrl, date, verified }`. Unverified values are shown as estimates. Ask the founder before setting `verified: true`.
 - **No hard-coded UI strings.** All text comes from ro and en translation files. Romanian uses comma-below ș/ț, never cedilla ş/ţ. Tone is informal "tu" for all audiences, and the founder confirms Romanian copy.
+- **Money:** RON is always shown as "lei" after the amount, in both languages. Always use `formatMoney` from `@u-drive/core`. Never format money by hand.
 - **Brand name** comes only from `packages/core/src/config/brand.ts`. The trademark check is pending.
 - **Ask before implementing** anything touching law, tax, payments, personal data (CNP, ID documents, criminal records) or third-party trademarks. Bolt and Uber appear as plain text only: no logos, no implied endorsement.
 - **Design system** follows spec §3 exactly, including the §3.7 anti-"AI look" rules. If a screen needs something the design system doesn't cover, propose an addition to the design system first.

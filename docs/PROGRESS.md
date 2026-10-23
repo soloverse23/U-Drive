@@ -10,7 +10,7 @@ Current phase: **Phase 0 — Foundation** (plan approved 2026-10-23)
 
 - **0.3 Design tokens.** `packages/ui-tokens`: palette, status colors, semantic roles (light + `.dark-section`), type scale, spacing, control heights, radius, layout, breakpoints, overlay shadow, motion. A generated Tailwind v4 theme (`theme.css`) resets every Tailwind default, so off-system values don't exist. 41 tests: WCAG AA for every allowed pair in both modes, and a freshness check on `theme.css`. The web app uses the tokens.
 
-- **0.4 i18n.** next-intl 4 with `/ro` (default) and `/en`, always prefixed. `/` redirects by browser language. Next 16 `proxy.ts`. Messages live in `packages/i18n/messages/{ro,en}/<feature>.json` and are type-checked keys. A locale switcher keeps the current path. There is a localized 404. `packages/core` has formatting helpers: `formatMoney` (RON/EUR, ro-RO style), `formatDate` (dd.mm.yyyy in ro, Bucharest time) and `ronToEur` (flags estimates). Tests: ro/en key parity, no cedilla ş/ţ, no banned phrases (§3.8). The lint rule `react/jsx-no-literals` blocks hard-coded JSX text.
+- **0.4 i18n.** next-intl 4 with `/ro` (default) and `/en`, always prefixed. `/` redirects by browser language. Next 16 `proxy.ts`. Messages live in `packages/i18n/messages/{ro,en}/<feature>.json` and are type-checked keys. A locale switcher keeps the current path. There is a localized 404. `packages/core` has formatting helpers: `formatMoney` (RON always shown as "lei", EUR), `formatDate` (dd.mm.yyyy in ro, Bucharest time) and `ronToEur` (flags estimates). Tests: ro/en key parity, no cedilla ş/ţ, no banned phrases (§3.8). The lint rule `react/jsx-no-literals` blocks hard-coded JSX text.
 
 ## In progress
 

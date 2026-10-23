@@ -5,12 +5,16 @@ import { formatDate, formatMoney, ronToEur } from "./format";
 const NBSP = " ";
 
 describe("formatMoney", () => {
-  it("formats RON the Romanian way", () => {
-    expect(formatMoney(1234.5, "RON", "ro")).toBe(`1.234,50${NBSP}RON`);
+  it("writes RON as lei in Romanian", () => {
+    expect(formatMoney(1234.5, "RON", "ro")).toBe(`1.234,50${NBSP}lei`);
   });
 
-  it("formats RON for English readers", () => {
-    expect(formatMoney(1234.5, "RON", "en")).toBe(`RON${NBSP}1,234.50`);
+  it("writes RON as lei in English too", () => {
+    expect(formatMoney(1234.5, "RON", "en")).toBe(`1,234.50${NBSP}lei`);
+  });
+
+  it("groups thousands in Romanian even for 4-digit amounts", () => {
+    expect(formatMoney(7000, "RON", "ro", { decimals: 0 })).toBe(`7.000${NBSP}lei`);
   });
 
   it("formats EUR and supports whole amounts", () => {

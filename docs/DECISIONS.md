@@ -49,6 +49,9 @@ The contrast check showed that spec status colors fail AA as normal text. Succes
 
 - next-intl 4 with `localePrefix: "always"`. Every URL carries `/ro` or `/en`. `/` redirects by `Accept-Language` or the `NEXT_LOCALE` cookie, with `ro` as the fallback.
 - Message files are split per feature (`common`, `nav`, …) and registered in `packages/i18n/src/index.ts`. `Messages` is typed from the ro files, so a missing key is a type error and a ro/en mismatch fails a test.
-- English formatting uses `en-GB` (dd/mm/yyyy, "RON 1,234.50"). The spec only fixes the ro formats. All dates render in `Europe/Bucharest`.
-- Currency renders as "RON", the Intl default for ro-RO, not "lei". This can be changed in one place if preferred.
+- English dates are dd/mm/yyyy (`en-GB`). The spec only fixes the ro formats. All dates render in `Europe/Bucharest`.
 - `react/jsx-no-literals` blocks hard-coded text in JSX. Brand name and locale codes also come from config or messages.
+
+## 2026-10-23 — RON is always "lei" (founder decision)
+
+RON amounts are written **"lei" after the number, in every locale and on every screen**: `1.234,50 lei` (ro) and `1,234.50 lei` (en). This is implemented once in `formatMoney` (`packages/core/src/format.ts`). Never write "RON" in the UI. EUR keeps the standard Intl format.

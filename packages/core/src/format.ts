@@ -6,18 +6,25 @@ export type Currency = "RON" | "EUR";
 /** All dates are shown in Romanian time, whatever the viewer's device zone. */
 const TIME_ZONE = "Europe/Bucharest";
 
-/** ro: "1.234,50 RON" · en: "RON 1,234.50". Prices default to 2 decimals. */
+/** RON is always written "lei" after the amount, in every locale (founder decision). */
+const RON_UNIT = "lei";
+
+/** ro: "1.234,50 lei" · en: "1,234.50 lei". Prices default to 2 decimals. */
 export function formatMoney(
   amount: number,
   currency: Currency,
   locale: Locale,
   { decimals = 2 }: { decimals?: number } = {},
 ): string {
+  const digits = { minimumFractionDigits: decimals, maximumFractionDigits: decimals };
+  if (currency === "RON") {
+    const number = new Intl.NumberFormat(intlLocale[locale], digits).format(amount);
+    return `${number}\u00a0${RON_UNIT}`;
+  }
   return new Intl.NumberFormat(intlLocale[locale], {
     style: "currency",
     currency,
-    minimumFractionDigits: decimals,
-    maximumFractionDigits: decimals,
+    ...digits,
   }).format(amount);
 }
 
