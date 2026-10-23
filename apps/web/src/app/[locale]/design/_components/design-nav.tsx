@@ -7,6 +7,7 @@ import { LocaleSwitcher } from "@/components/locale-switcher";
 const links = [
   { href: "/design", key: "system" },
   { href: "/design/fonts", key: "fonts" },
+  { href: "/design/brand", key: "brand" },
   { href: "/design/app-shell", key: "shell" },
 ] as const;
 

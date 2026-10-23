@@ -41,7 +41,8 @@
       "label": "Design sections",
       "system": "System",
       "fonts": "Fonts",
-      "shell": "App"
+      "shell": "App",
+      "brand": "Logo"
     },
     "title": "Design system",
     "intro": "Every token and component, in every state. Internal page, staging only.",
@@ -222,5 +223,29 @@
       "body": "The driver dashboard goes here. Demo page.",
       "open": "See the app shell"
     }
+  },
+  "brand": {
+    "title": "Logo: options",
+    "intro": "Three type-only logo options, all in Instrument Sans. Pick one; I then turn it into SVG and generate the favicon and app icons.",
+    "options": {
+      "a": {
+        "name": "A · Classic",
+        "body": "U-Drive, bold, tight spacing, standard hyphen. The simplest and easiest to read."
+      },
+      "b": {
+        "name": "B · Lowercase",
+        "body": "u-drive, all lowercase. The hyphen is a short bar, like a road marking. Friendlier, and clearly different from other mobility brands."
+      },
+      "c": {
+        "name": "C · Lane",
+        "body": "U DRIVE in capitals with a slanted bar between the words, like a lane line. The most distinctive and most “mobility”."
+      }
+    },
+    "onLight": "On white",
+    "onDark": "On black",
+    "inNav": "In the navigation bar",
+    "favicon": "Favicon 32 px",
+    "appIcon": "App icon",
+    "note": "All options are type-only: no symbols, no shapes that recall other brands. Before buying the domain, check the trademark at OSIM and EUIPO."
   }
 }

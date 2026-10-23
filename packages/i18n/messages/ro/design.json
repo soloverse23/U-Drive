@@ -41,7 +41,8 @@
       "label": "Secțiuni design",
       "system": "Sistem",
       "fonts": "Fonturi",
-      "shell": "Aplicație"
+      "shell": "Aplicație",
+      "brand": "Logo"
     },
     "title": "Sistem de design",
     "intro": "Toate tokenurile și componentele, în toate stările. Pagină internă, doar pe staging.",
@@ -222,5 +223,29 @@
       "body": "Aici apare panoul șoferului. Pagină demonstrativă.",
       "open": "Vezi cadrul aplicației"
     }
+  },
+  "brand": {
+    "title": "Logo: variante",
+    "intro": "Trei variante de logo tipografic, toate în Instrument Sans. Alege una; după alegere o transform în SVG și generez favicon și iconițele aplicației.",
+    "options": {
+      "a": {
+        "name": "A · Clasic",
+        "body": "U-Drive, bold, spațiere strânsă. Cratima standard. Cea mai simplă și cea mai ușor de citit."
+      },
+      "b": {
+        "name": "B · Minuscule",
+        "body": "u-drive, totul cu literă mică. Cratima e o bară scurtă, ca un marcaj de drum. Mai prietenos, clar diferit de alte mărci de mobilitate."
+      },
+      "c": {
+        "name": "C · Bandă",
+        "body": "U DRIVE cu majuscule și o bară înclinată între cuvinte, ca o linie de bandă. Cel mai distinctiv, mai „mobilitate”."
+      }
+    },
+    "onLight": "Pe alb",
+    "onDark": "Pe negru",
+    "inNav": "În bara de navigare",
+    "favicon": "Favicon 32 px",
+    "appIcon": "Iconiță aplicație",
+    "note": "Toate variantele sunt doar tipografice: fără simboluri, fără forme care să amintească de alte mărci. Înainte de a cumpăra domeniul, verifică marca la OSIM și EUIPO."
   }
 }
