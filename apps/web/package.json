@@ -17,9 +17,12 @@
     "@types/react-dom": "^19.3.0"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
     "@u-drive/core": "workspace:*",
+    "@u-drive/ui-tokens": "workspace:*",
     "next": "^16.4.3",
     "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "react-dom": "^19.3.1",
+    "tailwindcss": "^4.3.3"
   }
 }

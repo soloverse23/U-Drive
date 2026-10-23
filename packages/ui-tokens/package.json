@@ -4,11 +4,16 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./theme.css": "./theme.css"
   },
   "scripts": {
+    "generate": "tsx scripts/generate.ts",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run --passWithNoTests"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.15"
   }
 }

@@ -1,0 +1,130 @@
+/* Generated from packages/ui-tokens/src. Do not edit; run `pnpm --filter @u-drive/ui-tokens generate`. */
+
+@theme {
+  --*: initial;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-gray-50: #F6F6F6;
+  --color-gray-100: #EEEEEE;
+  --color-gray-200: #E2E2E2;
+  --color-gray-300: #CBCBCB;
+  --color-gray-400: #AFAFAF;
+  --color-gray-500: #757575;
+  --color-gray-600: #545454;
+  --color-gray-700: #333333;
+  --color-gray-800: #1F1F1F;
+  --color-success: #05944F;
+  --color-warning: #C77700;
+  --color-error: #E11900;
+  --color-info: #276EF1;
+  --font-sans: var(--font-brand), ui-sans-serif, system-ui, sans-serif;
+  --default-font-family: var(--font-sans);
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --text-display: 3.5rem;
+  --text-display--line-height: 4rem;
+  --text-display--font-weight: 700;
+  --text-display--letter-spacing: -0.02em;
+  --text-display-sm: 2.5rem;
+  --text-display-sm--line-height: 3rem;
+  --text-display-sm--font-weight: 700;
+  --text-display-sm--letter-spacing: -0.02em;
+  --text-h1: 2.5rem;
+  --text-h1--line-height: 3rem;
+  --text-h1--font-weight: 700;
+  --text-h2: 2rem;
+  --text-h2--line-height: 2.5rem;
+  --text-h2--font-weight: 700;
+  --text-h3: 1.5rem;
+  --text-h3--line-height: 2rem;
+  --text-h3--font-weight: 700;
+  --text-h4: 1.25rem;
+  --text-h4--line-height: 1.75rem;
+  --text-h4--font-weight: 500;
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.75rem;
+  --text-body-lg--font-weight: 400;
+  --text-body: 1rem;
+  --text-body--line-height: 1.5rem;
+  --text-body--font-weight: 400;
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.25rem;
+  --text-body-sm--font-weight: 400;
+  --text-label: 1rem;
+  --text-label--line-height: 1.25rem;
+  --text-label--font-weight: 500;
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1rem;
+  --text-caption--font-weight: 500;
+  --spacing-px: 1px;
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-24: 6rem;
+  --spacing-32: 8rem;
+  --spacing-control-compact: 2.25rem;
+  --spacing-control: 3rem;
+  --spacing-control-large: 3.5rem;
+  --container-content: 80rem;
+  --radius-control: 0.5rem;
+  --radius-card: 0.75rem;
+  --radius-pill: 9999px;
+  --shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.16);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --default-transition-duration: 150ms;
+  --default-transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Semantic roles resolve at runtime so .dark-section can remap them. */
+@theme inline {
+  --color-bg: var(--ud-bg);
+  --color-surface: var(--ud-surface);
+  --color-surface-strong: var(--ud-surface-strong);
+  --color-border: var(--ud-border);
+  --color-fg: var(--ud-fg);
+  --color-fg-muted: var(--ud-fg-muted);
+  --color-fg-subtle: var(--ud-fg-subtle);
+  --color-fg-disabled: var(--ud-fg-disabled);
+  --color-inverse-bg: var(--ud-inverse-bg);
+  --color-inverse-fg: var(--ud-inverse-fg);
+}
+
+:root,
+.light-section {
+  --ud-bg: #FFFFFF;
+  --ud-surface: #F6F6F6;
+  --ud-surface-strong: #EEEEEE;
+  --ud-border: #E2E2E2;
+  --ud-fg: #000000;
+  --ud-fg-muted: #545454;
+  --ud-fg-subtle: #757575;
+  --ud-fg-disabled: #AFAFAF;
+  --ud-inverse-bg: #000000;
+  --ud-inverse-fg: #FFFFFF;
+}
+
+.dark-section {
+  --ud-bg: #000000;
+  --ud-surface: #1F1F1F;
+  --ud-surface-strong: #333333;
+  --ud-border: #333333;
+  --ud-fg: #FFFFFF;
+  --ud-fg-muted: #AFAFAF;
+  --ud-fg-subtle: #AFAFAF;
+  --ud-fg-disabled: #545454;
+  --ud-inverse-bg: #FFFFFF;
+  --ud-inverse-fg: #000000;
+  background-color: var(--ud-bg);
+  color: var(--ud-fg);
+}

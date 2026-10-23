@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { brand } from "@u-drive/core";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: brand.name,

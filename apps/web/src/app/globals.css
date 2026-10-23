@@ -1,0 +1,12 @@
+@import "tailwindcss";
+/* Must come after Tailwind: resets its defaults and defines ours (spec §3). */
+@import "@u-drive/ui-tokens/theme.css";
+
+@layer base {
+  html {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
+  }
+}
