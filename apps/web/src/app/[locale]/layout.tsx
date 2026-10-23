@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { brand } from "@u-drive/core";
 import { ToastProvider } from "@/components/ui/toast";
 import { routing } from "@/i18n/routing";
+import { siteUrl } from "@/lib/env";
 import { brandFont } from "../fonts";
 import "../globals.css";
 
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Pr
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "common.metadata" });
   return {
+    metadataBase: siteUrl(),
     title: brand.name,
     description: t("description"),
   };

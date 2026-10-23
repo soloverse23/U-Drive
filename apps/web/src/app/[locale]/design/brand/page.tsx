@@ -2,10 +2,14 @@ import { use } from "react";
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import type { Locale } from "@u-drive/i18n";
+import { WordmarkSvg } from "@/components/layout/wordmark";
 import { buttonClasses } from "@/components/ui/button";
+import { StatusBadge } from "@/components/ui/status-badge";
 import { CompactMark, WordmarkSample, type WordmarkOption } from "./wordmark-options";
 
 const options: WordmarkOption[] = ["a", "b", "c"];
+/** Founder pick, 2026-10-23. The live logo is the outlined SVG (WordmarkSvg). */
+const chosen: WordmarkOption = "c";
 
 export default function BrandPage({ params }: PageProps<"/[locale]/design/brand">) {
   const { locale } = use(params);
@@ -34,19 +38,32 @@ export default function BrandPage({ params }: PageProps<"/[locale]/design/brand"
               {t(`options.${option}.name`)}
             </h2>
             <p className="mt-2 text-body-sm text-fg-muted">{t(`options.${option}.body`)}</p>
+            {option === chosen && (
+              <p className="mt-4">
+                <StatusBadge status="success">{t("chosen")}</StatusBadge>
+              </p>
+            )}
           </header>
 
           <div className="grid gap-6 lg:col-span-9">
             <div className="grid gap-6 sm:grid-cols-2">
               <figure>
                 <div className="flex h-32 items-center rounded-card border border-border px-8">
-                  <WordmarkSample option={option} size={48} />
+                  {option === chosen ? (
+                    <WordmarkSvg className="h-8" />
+                  ) : (
+                    <WordmarkSample option={option} size={48} />
+                  )}
                 </div>
                 <figcaption className="mt-2 text-caption text-fg-muted">{t("onLight")}</figcaption>
               </figure>
               <figure>
                 <div className="dark-section flex h-32 items-center rounded-card px-8">
-                  <WordmarkSample option={option} size={48} />
+                  {option === chosen ? (
+                    <WordmarkSvg className="h-8" />
+                  ) : (
+                    <WordmarkSample option={option} size={48} />
+                  )}
                 </div>
                 <figcaption className="mt-2 text-caption text-fg-muted">{t("onDark")}</figcaption>
               </figure>

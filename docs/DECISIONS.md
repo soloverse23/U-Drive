@@ -81,3 +81,11 @@ Instrument Sans (SIL OFL 1.1), weights 400/500/700, latin + latin-ext. It was ch
 - Overlays open without animation for now. The spec allows only minimal motion, and Radix unmounts closed dialogs. A 150ms fade can be added later.
 - The toast has a dark surface (`inverse-bg`), and status icons keep their color (all pass 3:1 on black). It auto-dismisses after 5s and is announced through a Radix live region.
 - Phosphor icons are React components and can't cross the server→client boundary. App-shell menus are defined in small client wrappers (see `design/_components/demo-app-shell.tsx`), which is the pattern for the role shells in 0.12.
+
+## 2026-10-23 — Logo: "Lane" (founder pick, option C)
+
+- `U▬DRIVE`: Instrument Sans Bold capitals, letter-spacing 0.01em. The hyphen is replaced by a bar 0.6em wide and 0.15em tall, skewed −24° and set 0.24em above the baseline (a lane line). It is type-only, with no symbol. It stays clear of Uber's title-case wordmark and app tile.
+- Source of truth: `tools/brand/build_wordmark.py`. It outlines the glyphs with fontTools and HarfBuzz kerning, using the name from `packages/core/src/config/brand.ts`, so a rename only requires rerunning it plus `node tools/brand/rasterize.mjs`. Generated files are committed and excluded from Prettier.
+- Compact mark `U▬`: white on a black tile for the favicon (rounded 6/32) and app icons (full bleed, mark at 56% width, inside the maskable safe zone).
+- The Open Graph base is the wordmark in white on black, left-aligned. Per-page OG images come in Phase 1.
+- `siteUrl()` (`apps/web/src/lib/env.ts`): `NEXT_PUBLIC_SITE_URL`, otherwise the Vercel production domain or deployment URL. It feeds `metadataBase`.

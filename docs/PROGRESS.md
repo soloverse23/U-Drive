@@ -19,6 +19,8 @@ Current phase: **Phase 0 — Foundation** (plan approved 2026-10-23)
 
 - **0.7 Components II.** Layout: `TopNav` (desktop nav from xl, full-screen menu below), `AppShell` (desktop sidebar, mobile bottom tab bar with at most 5 tabs), text `Wordmark`. UI: `Card` (bordered/filled, padding none), `DataTable` (right-aligned tabular numbers), `Stepper`, `Timeline`, `EmptyState`, `ToastProvider`/`useToast`, `Modal`, `BottomSheet` (Radix Dialog), `CalculatorShell` (inputs, result, breakdown, assumptions with estimate badges, disclaimer). Public pages now sit in the `(public)` route group with `TopNav`. Demos are on `/design` and `/design/app-shell/*`. Browser-checked: Escape closes the menu, focus moves into the modal, the calculator updates live, the active tab is correct, and nothing overflows at 390/1024/1280/1440.
 
+- **0.8 Wordmark + icons.** Founder picked **C · Lane**: `U▬DRIVE`, Instrument Sans Bold capitals with a slanted bar. It is outlined to SVG paths by `tools/brand/build_wordmark.py`, which reads the name from `brand.ts`, and used by `WordmarkSvg` (currentColor) in the nav and sidebar. The icon is a black tile with a white `U▬`: `app/icon.svg` (favicon), `app/apple-icon.png` (180), `public/icons/icon-192.png` and `icon-512.png` (PWA, maskable-safe), `app/opengraph-image.png` (1200×630 base). `metadataBase` comes from `siteUrl()`. Options page `/design/brand` marks the choice.
+
 ## In progress
 
 - Nothing.
@@ -27,7 +29,6 @@ Current phase: **Phase 0 — Foundation** (plan approved 2026-10-23)
 
 ## Next
 
-- 0.8 Wordmark + icons (founder picks one)
 - 0.9 Schema + RLS · 0.10 API skeleton · 0.11 Auth · 0.12 Onboarding + role areas
 - 0.13 Consent, monitoring, legal placeholders · 0.14 E2E + acceptance
 

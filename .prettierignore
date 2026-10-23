@@ -6,3 +6,6 @@ coverage
 pnpm-lock.yaml
 docs/SPEC.md
 packages/ui-tokens/theme.css
+apps/web/src/components/layout/wordmark-paths.ts
+apps/web/public/brand
+apps/web/src/app/icon.svg

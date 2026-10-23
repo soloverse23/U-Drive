@@ -16,3 +16,17 @@ export function appEnv(): AppEnv {
 export function showInternalRoutes(): boolean {
   return appEnv() !== "production";
 }
+
+/**
+ * Absolute site URL for metadata (Open Graph, canonical links). NEXT_PUBLIC_SITE_URL wins;
+ * on Vercel the production domain or the deployment URL is used.
+ */
+export function siteUrl(): URL {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL;
+  if (explicit) return new URL(explicit);
+  const vercelHost =
+    process.env.VERCEL_ENV === "production"
+      ? process.env.VERCEL_PROJECT_PRODUCTION_URL
+      : process.env.VERCEL_URL;
+  return new URL(vercelHost ? `https://${vercelHost}` : "http://localhost:3000");
+}
