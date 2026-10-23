@@ -21,9 +21,18 @@ Current phase: **Phase 0 — Foundation** (plan approved 2026-10-23)
 
 - **0.8 Wordmark + icons.** Founder picked **C · Lane**: `U▬DRIVE`, Instrument Sans Bold capitals with a slanted bar. It is outlined to SVG paths by `tools/brand/build_wordmark.py`, which reads the name from `brand.ts`, and used by `WordmarkSvg` (currentColor) in the nav and sidebar. The icon is a black tile with a white `U▬`: `app/icon.svg` (favicon), `app/apple-icon.png` (180), `public/icons/icon-192.png` and `icon-512.png` (PWA, maskable-safe), `app/opengraph-image.png` (1200×630 base). `metadataBase` comes from `siteUrl()`. Options page `/design/brand` marks the choice.
 
+- **0.9 Schema + RLS (local).** Supabase CLI in `packages/db`. Migration `20261023000000_initial_schema.sql`:
+  - `profiles` (name, locale, onboarded_at; no email/phone/CNP copies)
+  - `user_roles` (multi-role; users can self-assign only driver/owner_*)
+  - `vehicles` (minimal), `documents` (metadata; status reviewed by admins only; path bound to owner)
+  - append-only `audit_log` (role grants/revokes and document reviews are logged by triggers)
+  - private `documents` storage bucket (PDF/JPG/PNG, 10 MB, per-user folders)
+
+  30 pgTAP tests (cross-user isolation, privilege escalation, audit immutability, anon access), plus a CI `database` job. Generated types are in `@u-drive/db`.
+
 ## In progress
 
-- Nothing.
+- **0.9 remote:** link the Supabase staging and production projects and push the migration (founder runs `supabase login`/`link`; commands are in the chat).
 
 - **0.2 Vercel linking (founder).** Import the GitHub repo in Vercel with Root Directory `apps/web`. Production branch: `main`. `staging` gets a stable preview URL. Every PR gets a preview.
 

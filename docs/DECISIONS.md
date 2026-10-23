@@ -89,3 +89,12 @@ Instrument Sans (SIL OFL 1.1), weights 400/500/700, latin + latin-ext. It was ch
 - Compact mark `U▬`: white on a black tile for the favicon (rounded 6/32) and app icons (full bleed, mark at 56% width, inside the maskable safe zone).
 - The Open Graph base is the wordmark in white on black, left-aligned. Per-page OG images come in Phase 1.
 - `siteUrl()` (`apps/web/src/lib/env.ts`): `NEXT_PUBLIC_SITE_URL`, otherwise the Vercel production domain or deployment URL. It feeds `metadataBase`.
+
+## 2026-10-23 — Initial schema and data minimisation (step 0.9)
+
+- **Personal data:** `profiles` stores only the full name, locale and an onboarding timestamp. Email and phone stay in `auth.users` (no copies). **No CNP, ID numbers or criminal-record data** until there is a documented legal basis (spec §2, GDPR art. 10). The founder was asked and did not object.
+- **Roles:** users can give themselves only `driver`, `owner_individual`, `owner_fleet` and `owner_dealer`. `partner`, `accountant` and `admin` need verification and are granted by an admin. This is enforced in RLS and tested. Role checks use the `security definer` functions `has_role()` and `is_admin()` to avoid RLS recursion.
+- **Documents:** owners add documents only as `pending`, and only admins change the status. The storage path must start with the owner's id, which matches the storage policy (`documents/<uid>/...`). Supabase Storage encrypts at rest. A retention policy will be defined with the lawyer before real uploads (Phase 2).
+- **Audit log:** append-only, readable by admins only, and nobody can update or delete it. Writes go through `log_audit()` (actor is always `auth.uid()`) and triggers on role and document-status changes.
+- **Tests:** pgTAP via `supabase test db`, run locally and in a separate CI job (`supabase db start`, Postgres only). A Vitest check keeps `selfAssignableRoles` in sync with the SQL.
+- **Environments:** two Supabase projects in Frankfurt, `u-drive-staging` and `u-drive-production`. Migrations are pushed with the Supabase CLI. Keys live only in Vercel and local `.env.local`.

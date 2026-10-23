@@ -36,3 +36,18 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm build
+
+  database:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # Postgres only: applies every migration, then runs the pgTAP RLS tests.
+      - run: pnpm --filter @u-drive/db exec supabase db start
+      - run: pnpm --filter @u-drive/db test:db

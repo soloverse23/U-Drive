@@ -21,7 +21,16 @@ pnpm format:check  # prettier
 pnpm --filter @u-drive/core test                          # one package
 pnpm --filter @u-drive/core exec vitest run src/config/types.test.ts   # one file
 pnpm --filter @u-drive/core exec vitest run -t "isEstimate"            # by test name
+pnpm --filter @u-drive/web dev       # http://localhost:3000 (/ro, /en, /ro/design)
+
+# Database (needs Docker). Migrations: packages/db/supabase/migrations
+pnpm --filter @u-drive/db db:start   # local Supabase (API :54321, Postgres :54322, Mailpit :54324)
+pnpm --filter @u-drive/db db:reset   # re-apply all migrations from scratch
+pnpm --filter @u-drive/db test:db    # pgTAP RLS tests (supabase/tests/*.test.sql)
+pnpm --filter @u-drive/db gen:types  # regenerate src/database.types.ts after a migration
 ```
+
+Brand assets are generated, not hand-edited: `tools/brand/build_wordmark.py` (Python with fonttools, brotli, uharfbuzz), then `node tools/brand/rasterize.mjs`.
 
 ## Architecture
 
@@ -30,7 +39,7 @@ pnpm + Turborepo monorepo. Internal packages export TypeScript source directly (
 - `apps/web`: Next.js App Router (scaffolded in later steps). Must not contain business logic.
 - `packages/core`: pure TS business logic and config. No framework imports, so the future Expo app can reuse it.
 - `packages/api-contract`: zod schemas for the versioned REST API `/api/v1`. They generate OpenAPI and a typed client. Web and mobile both call this API. Server actions may only be thin wrappers around it.
-- `packages/db`: Supabase (EU) SQL migrations and generated types. RLS on every table.
+- `packages/db`: Supabase (EU) SQL migrations, pgTAP tests and generated types. RLS on every table (a test enforces this). Audit entries are written only through `public.log_audit()` or triggers. Users may self-assign only the roles in `public.is_self_assignable_role()`, mirrored by `selfAssignableRoles`.
 - `packages/i18n`: `ro` (default) and `en` message files, one per feature.
 - `packages/ui-tokens`: design tokens. This is the only place colors, type and spacing are defined. Tailwind and later React Native consume them.
 

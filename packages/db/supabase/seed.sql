@@ -1,0 +1,1 @@
+-- Local seed. Demo data comes in Phase 1 and must be clearly flagged as demo (spec §2).
