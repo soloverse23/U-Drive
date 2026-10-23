@@ -1,0 +1,38 @@
+{
+  "layout": {
+    "badge": "Staging only — not shown in production"
+  },
+  "fonts": {
+    "title": "Font comparison",
+    "intro": "The same content in four openly licensed fonts. Pick one and we use it across the whole product.",
+    "license": "License: SIL Open Font License 1.1",
+    "weights": "Weights: 400, 500, 700",
+    "checks": "Checked: comma-below ș ț, ă î â, tabular figures",
+    "weight400": "Regular 400",
+    "weight500": "Medium 500",
+    "weight700": "Bold 700",
+    "headline": "Rent a car. Drive on your own terms.",
+    "paragraph": "A standard contract between the owner and your PFA, a deposit held by a licensed payment provider, and rent paid every week. Works with Bolt and Uber.",
+    "table": {
+      "caption": "Available cars (example)",
+      "car": "Car",
+      "year": "Year",
+      "fuel": "Fuel",
+      "price": "Rent per week",
+      "hybrid": "Hybrid",
+      "petrol": "Petrol",
+      "lpg": "Petrol + LPG"
+    },
+    "calc": {
+      "title": "Net income per week",
+      "gross": "Gross earnings",
+      "commission": "Platform commission",
+      "rent": "Rent",
+      "fuel": "Fuel",
+      "net": "You keep",
+      "example": "Illustrative example, not a real estimate."
+    },
+    "glyphs": "Diacritics and figures",
+    "pangram": "Țară, școală, mâine, înțelegere, săptămână, încasări."
+  }
+}

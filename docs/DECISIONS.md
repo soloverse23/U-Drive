@@ -55,3 +55,9 @@ The contrast check showed that spec status colors fail AA as normal text. Succes
 ## 2026-10-23 — RON is always "lei" (founder decision)
 
 RON amounts are written **"lei" after the number, in every locale and on every screen**: `1.234,50 lei` (ro) and `1,234.50 lei` (en). This is implemented once in `formatMoney` (`packages/core/src/format.ts`). Never write "RON" in the UI. EUR keeps the standard Intl format.
+
+## 2026-10-23 — Font loading and internal routes
+
+- Fonts load with `next/font/google`, using the `latin` + `latin-ext` subsets and weights 400/500/700. Files are fetched at **build time** and served from our domain, so browsers never contact Google (this matters for GDPR). It is the boring, documented Next.js path, and the spec's "self-host" requirement is met. Fallback metrics are generated automatically to limit layout shift.
+- Internal routes (`/design/*`) are gated by `showInternalRoutes()` in `apps/web/src/lib/env.ts`. `NEXT_PUBLIC_APP_ENV` takes priority. If it is unset, Vercel's `VERCEL_ENV=production` counts as production, so a forgotten variable can't expose `/design`.
+- Playwright was added early (planned for 0.14) so that design pages can be screenshot-checked.

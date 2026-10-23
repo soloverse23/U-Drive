@@ -12,13 +12,16 @@ Current phase: **Phase 0 — Foundation** (plan approved 2026-10-23)
 
 - **0.4 i18n.** next-intl 4 with `/ro` (default) and `/en`, always prefixed. `/` redirects by browser language. Next 16 `proxy.ts`. Messages live in `packages/i18n/messages/{ro,en}/<feature>.json` and are type-checked keys. A locale switcher keeps the current path. There is a localized 404. `packages/core` has formatting helpers: `formatMoney` (RON always shown as "lei", EUR), `formatDate` (dd.mm.yyyy in ro, Bucharest time) and `ronToEur` (flags estimates). Tests: ro/en key parity, no cedilla ş/ţ, no banned phrases (§3.8). The lint rule `react/jsx-no-literals` blocks hard-coded JSX text.
 
+- **0.5 Font comparison page** at `/{ro,en}/design/fonts`. It shows Manrope, Figtree, Instrument Sans and Inter, each with the same headline, paragraph, weight samples, price table, calculator result and diacritics line. Fonts are self-hosted through `next/font/google` (downloaded at build). All four were checked with fontTools: comma-below ș/ț and ă/î/â are present, and `tnum` is supported. `/design/*` returns 404 in production (`src/lib/env.ts`) and is marked `noindex`.
+
 ## In progress
+
+- **Waiting for founder: font pick** (step 0.5 gate). After the pick, the chosen font becomes `--font-brand` in the root layout and the other three are removed.
 
 - **0.2 Vercel linking (founder).** Import the GitHub repo in Vercel with Root Directory `apps/web`. Production branch: `main`. `staging` gets a stable preview URL. Every PR gets a preview.
 
 ## Next
 
-- 0.5 Font comparison page (founder picks the font)
 - 0.6–0.7 Components and the `/design` route
 - 0.8 Wordmark + icons (founder picks one)
 - 0.9 Schema + RLS · 0.10 API skeleton · 0.11 Auth · 0.12 Onboarding + role areas

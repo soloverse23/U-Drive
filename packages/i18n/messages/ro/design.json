@@ -1,0 +1,38 @@
+{
+  "layout": {
+    "badge": "Doar staging — nu apare în producție"
+  },
+  "fonts": {
+    "title": "Comparare fonturi",
+    "intro": "Același conținut în patru fonturi cu licență liberă. Alege unul și îl folosim în tot produsul.",
+    "license": "Licență: SIL Open Font License 1.1",
+    "weights": "Grosimi: 400, 500, 700",
+    "checks": "Verificat: ș ț cu virgulă, ă î â, cifre tabulare",
+    "weight400": "Regular 400",
+    "weight500": "Medium 500",
+    "weight700": "Bold 700",
+    "headline": "Închiriază o mașină. Condu pe cont propriu.",
+    "paragraph": "Contract standard între proprietar și PFA-ul tău, garanție păstrată la un furnizor de plăți autorizat și chirie plătită în fiecare săptămână. Funcționează cu Bolt și Uber.",
+    "table": {
+      "caption": "Mașini disponibile (exemplu)",
+      "car": "Mașină",
+      "year": "An",
+      "fuel": "Combustibil",
+      "price": "Chirie pe săptămână",
+      "hybrid": "Hibrid",
+      "petrol": "Benzină",
+      "lpg": "Benzină + GPL"
+    },
+    "calc": {
+      "title": "Venit net pe săptămână",
+      "gross": "Încasări brute",
+      "commission": "Comision platformă",
+      "rent": "Chirie",
+      "fuel": "Combustibil",
+      "net": "Rămâne la tine",
+      "example": "Exemplu ilustrativ, nu o estimare reală."
+    },
+    "glyphs": "Diacritice și cifre",
+    "pangram": "Țară, școală, mâine, înțelegere, săptămână, încasări."
+  }
+}
