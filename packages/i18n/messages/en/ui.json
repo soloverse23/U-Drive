@@ -1,0 +1,9 @@
+{
+  "file": {
+    "choose": "Choose file",
+    "none": "No file chosen"
+  },
+  "button": {
+    "loading": "Loading"
+  }
+}

@@ -1,9 +1,11 @@
 import enCommon from "../messages/en/common.json";
 import enDesign from "../messages/en/design.json";
 import enNav from "../messages/en/nav.json";
+import enUi from "../messages/en/ui.json";
 import roCommon from "../messages/ro/common.json";
 import roDesign from "../messages/ro/design.json";
 import roNav from "../messages/ro/nav.json";
+import roUi from "../messages/ro/ui.json";
 
 export const locales = ["ro", "en"] as const;
 export type Locale = (typeof locales)[number];
@@ -13,12 +15,12 @@ export const defaultLocale: Locale = "ro";
 export const intlLocale: Record<Locale, string> = { ro: "ro-RO", en: "en-GB" };
 
 /** One namespace per feature; add new files to both locales and register them here. */
-const ro = { common: roCommon, nav: roNav, design: roDesign };
+const ro = { common: roCommon, nav: roNav, design: roDesign, ui: roUi };
 export type Messages = typeof ro;
 
 export const messages: Record<Locale, Messages> = {
   ro,
-  en: { common: enCommon, nav: enNav, design: enDesign },
+  en: { common: enCommon, nav: enNav, design: enDesign, ui: enUi },
 };
 
 export function isLocale(value: string): value is Locale {

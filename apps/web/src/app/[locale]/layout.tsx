@@ -4,6 +4,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { brand } from "@u-drive/core";
 import { routing } from "@/i18n/routing";
+import { brandFont } from "../fonts";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -26,7 +27,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   setRequestLocale(locale);
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={brandFont.variable}>
       <body>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>

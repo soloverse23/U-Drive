@@ -84,6 +84,12 @@
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
   --default-transition-duration: 150ms;
   --default-transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  --animate-spin: spin 1000ms linear infinite;
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }
 
 /* Semantic roles resolve at runtime so .dark-section can remap them. */

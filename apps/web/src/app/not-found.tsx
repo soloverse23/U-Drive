@@ -1,4 +1,5 @@
 import { defaultLocale, messages } from "@u-drive/i18n";
+import { brandFont } from "./fonts";
 import "./globals.css";
 
 // Only reached for paths outside the proxy's locale handling; localized 404s use [locale]/not-found.tsx.
@@ -6,7 +7,7 @@ export default function GlobalNotFound() {
   const t = messages[defaultLocale].common.notFound;
 
   return (
-    <html lang={defaultLocale}>
+    <html lang={defaultLocale} className={brandFont.variable}>
       <body>
         <main className="mx-auto max-w-content px-4 py-16 lg:px-6 lg:py-24">
           <h1 className="text-h1">{t.title}</h1>

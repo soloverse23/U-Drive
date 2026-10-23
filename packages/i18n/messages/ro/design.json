@@ -33,6 +33,108 @@
       "example": "Exemplu ilustrativ, nu o estimare reală."
     },
     "glyphs": "Diacritice și cifre",
-    "pangram": "Țară, școală, mâine, înțelegere, săptămână, încasări."
+    "pangram": "Țară, școală, mâine, înțelegere, săptămână, încasări.",
+    "chosen": "Ales"
+  },
+  "system": {
+    "nav": {
+      "label": "Secțiuni design",
+      "system": "Sistem",
+      "fonts": "Fonturi"
+    },
+    "title": "Sistem de design",
+    "intro": "Toate tokenurile și componentele, în toate stările. Pagină internă, doar pe staging.",
+    "states": {
+      "default": "Normal",
+      "hover": "Hover",
+      "focus": "Focus",
+      "active": "Apăsat",
+      "disabled": "Dezactivat",
+      "loading": "Se încarcă",
+      "filled": "Completat",
+      "error": "Eroare"
+    },
+    "sections": {
+      "colors": "Culori",
+      "semantic": "Roluri de culoare",
+      "status": "Culori de stare",
+      "typography": "Tipografie",
+      "spacing": "Spațiere",
+      "radius": "Colțuri",
+      "buttons": "Butoane",
+      "inputs": "Câmpuri",
+      "tabs": "Taburi",
+      "segmented": "Control segmentat",
+      "badges": "Etichete de stare",
+      "dark": "Secțiune închisă"
+    },
+    "notes": {
+      "status": "Doar pentru iconițe, borduri și bare. Textul stării rămâne negru.",
+      "semantic": "Componentele folosesc roluri, nu nuanțe directe. În secțiunile închise rolurile se inversează.",
+      "dark": "Aceleași componente într-o secțiune închisă (fundal negru)."
+    },
+    "sample": "Închiriază o mașină",
+    "variants": {
+      "primary": "Principal",
+      "secondary": "Secundar",
+      "tertiary": "Terțiar",
+      "destructive": "Distructiv"
+    },
+    "sizes": {
+      "compact": "Compact 36",
+      "default": "Normal 48",
+      "large": "Mare 56"
+    },
+    "buttons": {
+      "primary": "Închiriază o mașină",
+      "secondary": "Listează mașina",
+      "tertiary": "Vezi detalii",
+      "destructive": "Șterge documentul"
+    },
+    "inputs": {
+      "name": {
+        "label": "Nume complet",
+        "placeholder": "ex. Andrei Popescu",
+        "helper": "Așa cum apare în buletin.",
+        "error": "Completează numele.",
+        "value": "Andrei Popescu"
+      },
+      "city": {
+        "label": "Oraș",
+        "placeholder": "Alege orașul",
+        "helper": "Unde vrei să conduci."
+      },
+      "date": {
+        "label": "Data expirării ITP",
+        "helper": "Îți trimitem un memento înainte de expirare."
+      },
+      "file": {
+        "label": "Permis de conducere",
+        "helper": "PDF, JPG sau PNG."
+      }
+    },
+    "tabs": {
+      "overview": "Prezentare",
+      "documents": "Documente",
+      "payments": "Plăți",
+      "panel": "Conținutul tabului „{tab}”."
+    },
+    "segmented": {
+      "label": "Perioadă",
+      "weekly": "Săptămânal",
+      "monthly": "Lunar"
+    },
+    "badges": {
+      "success": "Plată confirmată",
+      "warning": "ITP expiră în curând",
+      "error": "Document respins",
+      "info": "În verificare",
+      "neutral": "Ciornă"
+    },
+    "modes": {
+      "role": "Rol",
+      "light": "Deschis",
+      "dark": "Închis"
+    }
   }
 }

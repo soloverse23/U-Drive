@@ -46,6 +46,9 @@ export const motion = {
   durationFast: 150,
   durationBase: 200,
   easing: "cubic-bezier(0, 0, 0.2, 1)",
+  /** Loading spinner only (design-system addition); disabled under prefers-reduced-motion. */
+  spinDuration: 1000,
 } as const;
 
-export const iconSize = 24;
+/** 24px is the standard; 16px only inside compact elements (badges, compact buttons, captions). */
+export const iconSize = { default: 24, small: 16 } as const;

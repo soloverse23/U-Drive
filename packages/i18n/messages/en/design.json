@@ -33,6 +33,108 @@
       "example": "Illustrative example, not a real estimate."
     },
     "glyphs": "Diacritics and figures",
-    "pangram": "Țară, școală, mâine, înțelegere, săptămână, încasări."
+    "pangram": "Țară, școală, mâine, înțelegere, săptămână, încasări.",
+    "chosen": "Chosen"
+  },
+  "system": {
+    "nav": {
+      "label": "Design sections",
+      "system": "System",
+      "fonts": "Fonts"
+    },
+    "title": "Design system",
+    "intro": "Every token and component, in every state. Internal page, staging only.",
+    "states": {
+      "default": "Default",
+      "hover": "Hover",
+      "focus": "Focus",
+      "active": "Pressed",
+      "disabled": "Disabled",
+      "loading": "Loading",
+      "filled": "Filled",
+      "error": "Error"
+    },
+    "sections": {
+      "colors": "Colors",
+      "semantic": "Color roles",
+      "status": "Status colors",
+      "typography": "Typography",
+      "spacing": "Spacing",
+      "radius": "Corners",
+      "buttons": "Buttons",
+      "inputs": "Inputs",
+      "tabs": "Tabs",
+      "segmented": "Segmented control",
+      "badges": "Status badges",
+      "dark": "Dark section"
+    },
+    "notes": {
+      "status": "Icons, borders and bars only. Status text stays black.",
+      "semantic": "Components use roles, not raw grays. Dark sections invert the roles.",
+      "dark": "The same components inside a dark section (black background)."
+    },
+    "sample": "Rent a car",
+    "variants": {
+      "primary": "Primary",
+      "secondary": "Secondary",
+      "tertiary": "Tertiary",
+      "destructive": "Destructive"
+    },
+    "sizes": {
+      "compact": "Compact 36",
+      "default": "Default 48",
+      "large": "Large 56"
+    },
+    "buttons": {
+      "primary": "Rent a car",
+      "secondary": "List your car",
+      "tertiary": "See details",
+      "destructive": "Delete document"
+    },
+    "inputs": {
+      "name": {
+        "label": "Full name",
+        "placeholder": "e.g. Andrei Popescu",
+        "helper": "As it appears on your ID card.",
+        "error": "Enter your name.",
+        "value": "Andrei Popescu"
+      },
+      "city": {
+        "label": "City",
+        "placeholder": "Choose a city",
+        "helper": "Where you want to drive."
+      },
+      "date": {
+        "label": "ITP expiry date",
+        "helper": "We send you a reminder before it expires."
+      },
+      "file": {
+        "label": "Driving licence",
+        "helper": "PDF, JPG or PNG."
+      }
+    },
+    "tabs": {
+      "overview": "Overview",
+      "documents": "Documents",
+      "payments": "Payments",
+      "panel": "Content of the “{tab}” tab."
+    },
+    "segmented": {
+      "label": "Period",
+      "weekly": "Weekly",
+      "monthly": "Monthly"
+    },
+    "badges": {
+      "success": "Payment confirmed",
+      "warning": "ITP expires soon",
+      "error": "Document rejected",
+      "info": "Under review",
+      "neutral": "Draft"
+    },
+    "modes": {
+      "role": "Role",
+      "light": "Light",
+      "dark": "Dark"
+    }
   }
 }

@@ -19,6 +19,9 @@
     "eslint-plugin-react": "^7.37.5"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "@radix-ui/react-tabs": "^1.2.1",
+    "@radix-ui/react-toggle-group": "^1.2.1",
     "@tailwindcss/postcss": "^4.3.3",
     "@u-drive/core": "workspace:*",
     "@u-drive/i18n": "workspace:*",

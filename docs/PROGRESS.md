@@ -14,15 +14,18 @@ Current phase: **Phase 0 — Foundation** (plan approved 2026-10-23)
 
 - **0.5 Font comparison page** at `/{ro,en}/design/fonts`. It shows Manrope, Figtree, Instrument Sans and Inter, each with the same headline, paragraph, weight samples, price table, calculator result and diacritics line. Fonts are self-hosted through `next/font/google` (downloaded at build). All four were checked with fontTools: comma-below ș/ț and ă/î/â are present, and `tnum` is supported. `/design/*` returns 404 in production (`src/lib/env.ts`) and is marked `noindex`.
 
+- **Font chosen: Instrument Sans** (founder, 2026-10-23). Exposed as `--font-brand` on `<html>` in `apps/web/src/app/fonts.ts`. The comparison page stays as the record of the decision, with the chosen font marked.
+- **0.6 Components I + `/design`.** Components: `Button` (primary/secondary/tertiary/destructive; compact/default/large; full and mobile-full width; loading), `TextInput`, `Select` (native), `DateInput` (native), `FileInput` (translated text), `Tabs` and `SegmentedControl` (Radix), `StatusBadge`. Every state is shown on `/{ro,en}/design` with tokens (palette, status, roles, type, spacing, radius) and a dark section. `ui-hover`/`ui-active`/`ui-focus`/`ui-focus-visible` variants also match `data-preview` so states can be shown statically. The page was checked with screenshots, and there's no page-level horizontal scroll at 390px.
+
 ## In progress
 
-- **Waiting for founder: font pick** (step 0.5 gate). After the pick, the chosen font becomes `--font-brand` in the root layout and the other three are removed.
+- Nothing.
 
 - **0.2 Vercel linking (founder).** Import the GitHub repo in Vercel with Root Directory `apps/web`. Production branch: `main`. `staging` gets a stable preview URL. Every PR gets a preview.
 
 ## Next
 
-- 0.6–0.7 Components and the `/design` route
+- 0.7 Components II: nav, app shell, cards, table, stepper, timeline, empty state, toast, modal, bottom sheet, calculator shell
 - 0.8 Wordmark + icons (founder picks one)
 - 0.9 Schema + RLS · 0.10 API skeleton · 0.11 Auth · 0.12 Onboarding + role areas
 - 0.13 Consent, monitoring, legal placeholders · 0.14 E2E + acceptance

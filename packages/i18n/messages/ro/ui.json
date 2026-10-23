@@ -1,0 +1,9 @@
+{
+  "file": {
+    "choose": "Alege fișier",
+    "none": "Niciun fișier ales"
+  },
+  "button": {
+    "loading": "Se încarcă"
+  }
+}

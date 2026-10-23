@@ -3,6 +3,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { formatMoney } from "@u-drive/core";
 import type { Locale } from "@u-drive/i18n";
+import { StatusBadge } from "@/components/ui/status-badge";
 import { fontCandidates } from "./candidates";
 
 // Illustrative demo data for typography only — not listings, not market data.
@@ -30,13 +31,26 @@ export default function FontsPage({ params }: PageProps<"/[locale]/design/fonts"
       </div>
 
       {fontCandidates.map((font) => (
-        <FontSample key={font.id} name={font.name} className={font.className} />
+        <FontSample
+          key={font.id}
+          name={font.name}
+          className={font.className}
+          chosen={font.chosen}
+        />
       ))}
     </main>
   );
 }
 
-function FontSample({ name, className }: { name: string; className: string }) {
+function FontSample({
+  name,
+  className,
+  chosen,
+}: {
+  name: string;
+  className: string;
+  chosen: boolean;
+}) {
   const t = useTranslations("design.fonts");
   const locale = useLocale();
   const money = (amount: number) => formatMoney(amount, "RON", locale);
@@ -50,6 +64,11 @@ function FontSample({ name, className }: { name: string; className: string }) {
         <h2 id={`font-${name}`} className="text-h2">
           {name}
         </h2>
+        {chosen && (
+          <p className="mt-2">
+            <StatusBadge status="success">{t("chosen")}</StatusBadge>
+          </p>
+        )}
         <ul className="mt-4 space-y-1 text-body-sm text-fg-muted">
           <li>{t("license")}</li>
           <li>{t("weights")}</li>

@@ -45,6 +45,12 @@ export function buildThemeCss(): string {
     decl("ease-out", motion.easing),
     decl("default-transition-duration", `${motion.durationFast}ms`),
     decl("default-transition-timing-function", motion.easing),
+    decl("animate-spin", `spin ${motion.spinDuration}ms linear infinite`),
+    "  @keyframes spin {",
+    "    to {",
+    "      transform: rotate(360deg);",
+    "    }",
+    "  }",
   ];
 
   const roles = Object.keys(semantic.light) as SemanticColor[];

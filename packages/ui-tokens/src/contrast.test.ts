@@ -54,3 +54,19 @@ describe("documented restrictions", () => {
     expect(contrastRatio(status.warning, palette.white)).toBeLessThan(AA.text);
   });
 });
+
+describe("component color pairs", () => {
+  it("destructive button text (white on error) passes AA text", () => {
+    expect(contrastRatio(palette.white, status.error)).toBeGreaterThanOrEqual(AA.text);
+  });
+
+  it("input placeholder (fg-muted on surface) passes AA text", () => {
+    expect(contrastRatio(semantic.light.fgMuted, semantic.light.surface)).toBeGreaterThanOrEqual(
+      AA.text,
+    );
+  });
+
+  it("input error border (error on surface) passes AA non-text", () => {
+    expect(contrastRatio(status.error, semantic.light.surface)).toBeGreaterThanOrEqual(AA.nonText);
+  });
+});

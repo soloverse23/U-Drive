@@ -23,9 +23,15 @@ const inter = Inter({
   display: "swap",
 });
 
+// Kept as the record of the font decision (spec §3.9 deliverable); Instrument Sans won.
 export const fontCandidates = [
-  { id: "manrope", name: "Manrope", className: manrope.className },
-  { id: "figtree", name: "Figtree", className: figtree.className },
-  { id: "instrument-sans", name: "Instrument Sans", className: instrumentSans.className },
-  { id: "inter", name: "Inter", className: inter.className },
+  { id: "manrope", name: "Manrope", className: manrope.className, chosen: false },
+  { id: "figtree", name: "Figtree", className: figtree.className, chosen: false },
+  {
+    id: "instrument-sans",
+    name: "Instrument Sans",
+    className: instrumentSans.className,
+    chosen: true,
+  },
+  { id: "inter", name: "Inter", className: inter.className, chosen: false },
 ] as const;

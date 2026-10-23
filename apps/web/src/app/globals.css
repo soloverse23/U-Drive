@@ -2,6 +2,15 @@
 /* Must come after Tailwind: resets its defaults and defines ours (spec §3). */
 @import "@u-drive/ui-tokens/theme.css";
 
+/*
+ * Interaction states. Each also matches [data-preview~="<state>"] so /design can render
+ * every state statically. Components use these instead of hover:/focus-visible:/active:.
+ */
+@custom-variant ui-hover (&:where(:hover:not(:disabled, [aria-disabled="true"]), [data-preview~="hover"]));
+@custom-variant ui-active (&:where(:active:not(:disabled, [aria-disabled="true"]), [data-preview~="active"]));
+@custom-variant ui-focus-visible (&:where(:focus-visible, [data-preview~="focus"]));
+@custom-variant ui-focus (&:where(:focus, [data-preview~="focus"]));
+
 @layer base {
   html {
     background-color: var(--color-bg);
