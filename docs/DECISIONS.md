@@ -73,3 +73,11 @@ Instrument Sans (SIL OFL 1.1), weights 400/500/700, latin + latin-ext. It was ch
 - **File input:** the native input stays (visually hidden) for accessibility. Our translated label replaces the browser's untranslated "No file chosen".
 - **Radix** (Tabs, ToggleGroup) supplies unstyled, accessible behavior (keyboard, ARIA). All styling is ours. No tailwind-merge, because it would drop token classes it doesn't know.
 - **Design-system additions (please confirm):** 16px icons are allowed inside compact elements (badges, compact buttons, field errors; standard is 24px). A loading spinner rotates at 1s, linear, and is disabled under `prefers-reduced-motion`.
+
+## 2026-10-23 — Components II decisions (step 0.7)
+
+- **Top nav switches at `xl` (1280px), not `lg`:** the Romanian labels ("Pentru proprietari", "Cum funcționează") don't fit on one line at 1024px. Below 1280 the full-screen menu is used.
+- **Design-system additions (please confirm):** `--container-sidebar` 256px for the app sidebar and `--container-dialog` 560px for the max width of modals and toasts. The overlay backdrop is black at 50%. The bottom sheet's max height is 85% of the viewport. The mobile tab bar has a 2px black top indicator on the active tab.
+- Overlays open without animation for now. The spec allows only minimal motion, and Radix unmounts closed dialogs. A 150ms fade can be added later.
+- The toast has a dark surface (`inverse-bg`), and status icons keep their color (all pass 3:1 on black). It auto-dismisses after 5s and is announced through a Radix live region.
+- Phosphor icons are React components and can't cross the server→client boundary. App-shell menus are defined in small client wrappers (see `design/_components/demo-app-shell.tsx`), which is the pattern for the role shells in 0.12.

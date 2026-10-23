@@ -40,7 +40,8 @@
     "nav": {
       "label": "Secțiuni design",
       "system": "Sistem",
-      "fonts": "Fonturi"
+      "fonts": "Fonturi",
+      "shell": "Aplicație"
     },
     "title": "Sistem de design",
     "intro": "Toate tokenurile și componentele, în toate stările. Pagină internă, doar pe staging.",
@@ -66,12 +67,27 @@
       "tabs": "Taburi",
       "segmented": "Control segmentat",
       "badges": "Etichete de stare",
-      "dark": "Secțiune închisă"
+      "dark": "Secțiune închisă",
+      "nav": "Navigare",
+      "cards": "Carduri",
+      "table": "Tabel",
+      "stepper": "Pași de progres",
+      "timeline": "Cronologie",
+      "empty": "Stare goală",
+      "toast": "Notificare",
+      "modal": "Fereastră",
+      "sheet": "Panou de jos",
+      "calculator": "Calculator",
+      "shell": "Cadru aplicație"
     },
     "notes": {
       "status": "Doar pentru iconițe, borduri și bare. Textul stării rămâne negru.",
       "semantic": "Componentele folosesc roluri, nu nuanțe directe. În secțiunile închise rolurile se inversează.",
-      "dark": "Aceleași componente într-o secțiune închisă (fundal negru)."
+      "dark": "Aceleași componente într-o secțiune închisă (fundal negru).",
+      "nav": "Pe mobil, meniul se deschide pe tot ecranul. Micșorează fereastra ca să-l vezi.",
+      "shell": "Bara laterală pe desktop, bara de taburi jos pe mobil (maximum 5).",
+      "sheet": "Pentru mobil. Se deschide din partea de jos.",
+      "calculator": "Demo. Calculele reale vin din packages/core în faza 1."
     },
     "sample": "Închiriază o mașină",
     "variants": {
@@ -135,6 +151,76 @@
       "role": "Rol",
       "light": "Deschis",
       "dark": "Închis"
+    },
+    "cards": {
+      "bordered": "Card cu bordură",
+      "filled": "Card cu fundal",
+      "body": "Fundal alb cu bordură gri sau fundal gri deschis. Fără culori.",
+      "exampleTitle": "Toyota Corolla · 2022",
+      "exampleMeta": "Hibrid · 5 locuri · exemplu",
+      "perWeek": "pe săptămână"
+    },
+    "table": {
+      "caption": "Plăți (exemplu)",
+      "date": "Data",
+      "description": "Descriere",
+      "amount": "Sumă",
+      "rent": "Chirie săptămâna {week}",
+      "deposit": "Garanție"
+    },
+    "stepper": {
+      "label": "Devino PFA",
+      "atestat": "Atestat",
+      "pfa": "Înregistrare PFA",
+      "arr": "Autorizație ARR",
+      "copie": "Copie conformă",
+      "platforms": "Conturi Bolt și Uber"
+    },
+    "timeline": {
+      "signed": "Contract semnat",
+      "signedBody": "Între proprietar și PFA-ul tău.",
+      "deposit": "Garanție plătită",
+      "depositBody": "Păstrată la furnizorul de plăți.",
+      "handover": "Predarea mașinii",
+      "handoverBody": "Cu poze și note la predare.",
+      "firstRent": "Prima chirie",
+      "firstRentBody": "Se încasează automat."
+    },
+    "empty": {
+      "title": "Niciun document încă",
+      "body": "Încarcă permisul ca să începi verificarea.",
+      "action": "Încarcă un document"
+    },
+    "toast": {
+      "trigger": "Arată notificarea",
+      "message": "Documentul a fost încărcat."
+    },
+    "modal": {
+      "trigger": "Deschide fereastra",
+      "title": "Ștergi documentul?",
+      "body": "Documentul va fi șters definitiv. Nu poți anula acțiunea.",
+      "cancel": "Anulează",
+      "confirm": "Șterge"
+    },
+    "sheet": {
+      "trigger": "Deschide panoul",
+      "title": "Filtrează mașinile",
+      "apply": "Aplică filtrele"
+    },
+    "calculator": {
+      "title": "Venit net pe săptămână",
+      "gross": "Încasări brute pe săptămână",
+      "rent": "Chirie pe săptămână",
+      "fuel": "Combustibil pe săptămână",
+      "commission": "Comision platformă",
+      "result": "Rămâne la tine pe săptămână",
+      "commissionRate": "Comision platformă",
+      "demoSource": "Valoare demonstrativă, de confirmat"
+    },
+    "shell": {
+      "title": "Prezentare",
+      "body": "Aici apare panoul șoferului. Pagină demonstrativă.",
+      "open": "Vezi cadrul aplicației"
     }
   }
 }

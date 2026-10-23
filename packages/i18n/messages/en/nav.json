@@ -5,5 +5,31 @@
     "en": "EN",
     "roName": "Română",
     "enName": "English"
+  },
+  "top": {
+    "label": "Main navigation",
+    "drivers": "For drivers",
+    "owners": "For owners",
+    "partners": "For partners",
+    "howItWorks": "How it works",
+    "login": "Log in",
+    "signup": "Sign up",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menuTitle": "Menu",
+    "home": "Home page"
+  },
+  "app": {
+    "label": "App navigation",
+    "overview": "Overview",
+    "overviewShort": "Home",
+    "documents": "Documents",
+    "documentsShort": "Documents",
+    "rental": "Car & rental",
+    "rentalShort": "Car",
+    "payments": "Payments",
+    "paymentsShort": "Payments",
+    "settings": "Settings",
+    "settingsShort": "Settings"
   }
 }

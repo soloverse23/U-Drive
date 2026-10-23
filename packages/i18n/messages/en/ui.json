@@ -5,5 +5,26 @@
   },
   "button": {
     "loading": "Loading"
+  },
+  "dialog": {
+    "close": "Close"
+  },
+  "toast": {
+    "close": "Close notification",
+    "region": "Notifications"
+  },
+  "stepper": {
+    "progress": "Step {current} of {total}",
+    "complete": "complete",
+    "current": "current step",
+    "upcoming": "upcoming"
+  },
+  "calculator": {
+    "assumptions": "Assumptions",
+    "source": "Source",
+    "estimate": "Estimate",
+    "verified": "Verified",
+    "disclaimer": "Estimate — not financial or tax advice.",
+    "breakdown": "Calculation details"
   }
 }

@@ -5,5 +5,31 @@
     "en": "EN",
     "roName": "Română",
     "enName": "English"
+  },
+  "top": {
+    "label": "Navigare principală",
+    "drivers": "Pentru șoferi",
+    "owners": "Pentru proprietari",
+    "partners": "Pentru parteneri",
+    "howItWorks": "Cum funcționează",
+    "login": "Intră în cont",
+    "signup": "Creează cont",
+    "openMenu": "Deschide meniul",
+    "closeMenu": "Închide meniul",
+    "menuTitle": "Meniu",
+    "home": "Pagina principală"
+  },
+  "app": {
+    "label": "Navigare aplicație",
+    "overview": "Prezentare",
+    "overviewShort": "Acasă",
+    "documents": "Documente",
+    "documentsShort": "Documente",
+    "rental": "Mașină și închiriere",
+    "rentalShort": "Mașina",
+    "payments": "Plăți",
+    "paymentsShort": "Plăți",
+    "settings": "Setări",
+    "settingsShort": "Setări"
   }
 }

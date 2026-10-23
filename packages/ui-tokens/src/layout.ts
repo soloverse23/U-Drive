@@ -29,6 +29,10 @@ export const radius = {
 
 export const layout = {
   maxContentWidth: 1280,
+  /** App sidebar on desktop (design-system addition). */
+  sidebarWidth: 256,
+  /** Max width of modals and toasts (design-system addition). */
+  dialogWidth: 560,
   columns: { mobile: 4, desktop: 12 },
   sectionPadding: { mobile: 64, desktop: 96 },
   gutter: { mobile: 16, desktop: 24 },

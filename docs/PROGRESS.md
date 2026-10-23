@@ -17,6 +17,8 @@ Current phase: **Phase 0 — Foundation** (plan approved 2026-10-23)
 - **Font chosen: Instrument Sans** (founder, 2026-10-23). Exposed as `--font-brand` on `<html>` in `apps/web/src/app/fonts.ts`. The comparison page stays as the record of the decision, with the chosen font marked.
 - **0.6 Components I + `/design`.** Components: `Button` (primary/secondary/tertiary/destructive; compact/default/large; full and mobile-full width; loading), `TextInput`, `Select` (native), `DateInput` (native), `FileInput` (translated text), `Tabs` and `SegmentedControl` (Radix), `StatusBadge`. Every state is shown on `/{ro,en}/design` with tokens (palette, status, roles, type, spacing, radius) and a dark section. `ui-hover`/`ui-active`/`ui-focus`/`ui-focus-visible` variants also match `data-preview` so states can be shown statically. The page was checked with screenshots, and there's no page-level horizontal scroll at 390px.
 
+- **0.7 Components II.** Layout: `TopNav` (desktop nav from xl, full-screen menu below), `AppShell` (desktop sidebar, mobile bottom tab bar with at most 5 tabs), text `Wordmark`. UI: `Card` (bordered/filled, padding none), `DataTable` (right-aligned tabular numbers), `Stepper`, `Timeline`, `EmptyState`, `ToastProvider`/`useToast`, `Modal`, `BottomSheet` (Radix Dialog), `CalculatorShell` (inputs, result, breakdown, assumptions with estimate badges, disclaimer). Public pages now sit in the `(public)` route group with `TopNav`. Demos are on `/design` and `/design/app-shell/*`. Browser-checked: Escape closes the menu, focus moves into the modal, the calculator updates live, the active tab is correct, and nothing overflows at 390/1024/1280/1440.
+
 ## In progress
 
 - Nothing.
@@ -25,7 +27,6 @@ Current phase: **Phase 0 — Foundation** (plan approved 2026-10-23)
 
 ## Next
 
-- 0.7 Components II: nav, app shell, cards, table, stepper, timeline, empty state, toast, modal, bottom sheet, calculator shell
 - 0.8 Wordmark + icons (founder picks one)
 - 0.9 Schema + RLS · 0.10 API skeleton · 0.11 Auth · 0.12 Onboarding + role areas
 - 0.13 Consent, monitoring, legal placeholders · 0.14 E2E + acceptance

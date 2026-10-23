@@ -38,6 +38,8 @@ export function buildThemeCss(): string {
       decl(k === "default" ? "spacing-control" : `spacing-control-${k}`, rem(v)),
     ),
     decl("container-content", rem(layout.maxContentWidth)),
+    decl("container-sidebar", rem(layout.sidebarWidth)),
+    decl("container-dialog", rem(layout.dialogWidth)),
     ...Object.entries(radius).map(([k, v]) =>
       decl(`radius-${k}`, k === "pill" ? "9999px" : rem(v)),
     ),

@@ -40,7 +40,8 @@
     "nav": {
       "label": "Design sections",
       "system": "System",
-      "fonts": "Fonts"
+      "fonts": "Fonts",
+      "shell": "App"
     },
     "title": "Design system",
     "intro": "Every token and component, in every state. Internal page, staging only.",
@@ -66,12 +67,27 @@
       "tabs": "Tabs",
       "segmented": "Segmented control",
       "badges": "Status badges",
-      "dark": "Dark section"
+      "dark": "Dark section",
+      "nav": "Navigation",
+      "cards": "Cards",
+      "table": "Table",
+      "stepper": "Progress stepper",
+      "timeline": "Timeline",
+      "empty": "Empty state",
+      "toast": "Toast",
+      "modal": "Modal",
+      "sheet": "Bottom sheet",
+      "calculator": "Calculator",
+      "shell": "App shell"
     },
     "notes": {
       "status": "Icons, borders and bars only. Status text stays black.",
       "semantic": "Components use roles, not raw grays. Dark sections invert the roles.",
-      "dark": "The same components inside a dark section (black background)."
+      "dark": "The same components inside a dark section (black background).",
+      "nav": "On mobile the menu opens full screen. Narrow the window to see it.",
+      "shell": "Sidebar on desktop, bottom tab bar on mobile (at most 5).",
+      "sheet": "For mobile. Opens from the bottom.",
+      "calculator": "Demo. Real calculations come from packages/core in Phase 1."
     },
     "sample": "Rent a car",
     "variants": {
@@ -135,6 +151,76 @@
       "role": "Role",
       "light": "Light",
       "dark": "Dark"
+    },
+    "cards": {
+      "bordered": "Bordered card",
+      "filled": "Filled card",
+      "body": "White with a gray border, or a light gray fill. No colors.",
+      "exampleTitle": "Toyota Corolla · 2022",
+      "exampleMeta": "Hybrid · 5 seats · example",
+      "perWeek": "per week"
+    },
+    "table": {
+      "caption": "Payments (example)",
+      "date": "Date",
+      "description": "Description",
+      "amount": "Amount",
+      "rent": "Rent, week {week}",
+      "deposit": "Deposit"
+    },
+    "stepper": {
+      "label": "Become a PFA",
+      "atestat": "Atestat",
+      "pfa": "PFA registration",
+      "arr": "ARR authorization",
+      "copie": "Copie conformă",
+      "platforms": "Bolt and Uber accounts"
+    },
+    "timeline": {
+      "signed": "Contract signed",
+      "signedBody": "Between the owner and your PFA.",
+      "deposit": "Deposit paid",
+      "depositBody": "Held by the payment provider.",
+      "handover": "Car handover",
+      "handoverBody": "With photos and handover notes.",
+      "firstRent": "First rent",
+      "firstRentBody": "Collected automatically."
+    },
+    "empty": {
+      "title": "No documents yet",
+      "body": "Upload your driving licence to start verification.",
+      "action": "Upload a document"
+    },
+    "toast": {
+      "trigger": "Show toast",
+      "message": "Document uploaded."
+    },
+    "modal": {
+      "trigger": "Open modal",
+      "title": "Delete the document?",
+      "body": "The document will be deleted permanently. You can't undo this.",
+      "cancel": "Cancel",
+      "confirm": "Delete"
+    },
+    "sheet": {
+      "trigger": "Open sheet",
+      "title": "Filter cars",
+      "apply": "Apply filters"
+    },
+    "calculator": {
+      "title": "Net income per week",
+      "gross": "Gross earnings per week",
+      "rent": "Rent per week",
+      "fuel": "Fuel per week",
+      "commission": "Platform commission",
+      "result": "You keep per week",
+      "commissionRate": "Platform commission",
+      "demoSource": "Demo value, to be confirmed"
+    },
+    "shell": {
+      "title": "Overview",
+      "body": "The driver dashboard goes here. Demo page.",
+      "open": "See the app shell"
     }
   }
 }

@@ -5,5 +5,26 @@
   },
   "button": {
     "loading": "Se încarcă"
+  },
+  "dialog": {
+    "close": "Închide"
+  },
+  "toast": {
+    "close": "Închide notificarea",
+    "region": "Notificări"
+  },
+  "stepper": {
+    "progress": "Pasul {current} din {total}",
+    "complete": "finalizat",
+    "current": "pasul curent",
+    "upcoming": "urmează"
+  },
+  "calculator": {
+    "assumptions": "Ipoteze",
+    "source": "Sursă",
+    "estimate": "Estimare",
+    "verified": "Verificat",
+    "disclaimer": "Estimare — nu este consultanță financiară sau fiscală.",
+    "breakdown": "Detalii calcul"
   }
 }

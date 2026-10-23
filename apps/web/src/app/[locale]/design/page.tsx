@@ -1,13 +1,28 @@
 import { use } from "react";
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
+import { formatDate, formatMoney } from "@u-drive/core";
 import type { Locale } from "@u-drive/i18n";
 import { palette, radius, semantic, spacing, status, textStyles } from "@u-drive/ui-tokens";
-import { Button, type ButtonSize, type ButtonVariant } from "@/components/ui/button";
+import { TopNav } from "@/components/layout/top-nav";
+import { Button, buttonClasses, type ButtonSize, type ButtonVariant } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { DataTable } from "@/components/ui/data-table";
+import { EmptyState } from "@/components/ui/empty-state";
+import { Stepper } from "@/components/ui/stepper";
+import { Timeline } from "@/components/ui/timeline";
+import { Link } from "@/i18n/navigation";
 import { FileInput } from "@/components/ui/file-input";
 import { DateInput, Select, TextInput } from "@/components/ui/inputs";
 import { StatusBadge, type Status } from "@/components/ui/status-badge";
-import { SegmentedDemo, TabsDemo } from "./_components/demos";
+import {
+  CalculatorDemo,
+  ModalDemo,
+  SegmentedDemo,
+  SheetDemo,
+  TabsDemo,
+  ToastDemo,
+} from "./_components/demos";
 import { DesignSection, TokenCaption } from "./_components/design-section";
 
 // Literal class names so Tailwind's scanner sees them.
@@ -37,10 +52,25 @@ const inputStates = ["default", "hover", "focus", "filled", "error", "disabled"]
 const statuses: Status[] = ["success", "warning", "error", "info", "neutral"];
 const cities = ["București", "Cluj-Napoca", "Timișoara", "Iași"];
 
+// Illustrative rows for the table and timeline demos — not real data.
+const demoPayments = [
+  { id: "p3", date: "2026-10-19", kind: "rent", week: 43, amount: -715 },
+  { id: "p2", date: "2026-10-12", kind: "rent", week: 42, amount: -715 },
+  { id: "p1", date: "2026-10-05", kind: "deposit", week: 0, amount: -1500 },
+] as const;
+const onboardingSteps = ["atestat", "pfa", "arr", "copie", "platforms"] as const;
+const timelineSteps = [
+  { key: "signed", date: "2026-10-01", done: true },
+  { key: "deposit", date: "2026-10-02", done: true },
+  { key: "handover", date: "2026-10-05", done: true },
+  { key: "firstRent", date: "2026-10-12", done: false },
+] as const;
+
 export default function DesignSystemPage({ params }: PageProps<"/[locale]/design">) {
   const { locale } = use(params);
   setRequestLocale(locale as Locale);
   const t = useTranslations("design.system");
+  const l = locale as Locale;
 
   return (
     <main className="mx-auto max-w-content px-4 py-12 lg:px-6 lg:py-16">
@@ -265,6 +295,111 @@ export default function DesignSystemPage({ params }: PageProps<"/[locale]/design
             </li>
           ))}
         </ul>
+      </DesignSection>
+
+      <DesignSection id="nav" title={t("sections.nav")} note={t("notes.nav")}>
+        <div className="overflow-hidden rounded-card border border-border">
+          <TopNav />
+        </div>
+      </DesignSection>
+
+      <DesignSection id="shell" title={t("sections.shell")} note={t("notes.shell")}>
+        <Link href="/design/app-shell" className={buttonClasses({ variant: "secondary" })}>
+          {t("shell.open")}
+        </Link>
+      </DesignSection>
+
+      <DesignSection id="cards" title={t("sections.cards")}>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <Card>
+            <p className="text-h4">{t("cards.bordered")}</p>
+            <p className="mt-2 text-body text-fg-muted">{t("cards.body")}</p>
+          </Card>
+          <Card variant="filled">
+            <p className="text-h4">{t("cards.filled")}</p>
+            <p className="mt-2 text-body text-fg-muted">{t("cards.body")}</p>
+          </Card>
+          <Card padding="none">
+            <div className="h-32 bg-surface-strong" />
+            <div className="p-6">
+              <p className="text-label">{t("cards.exampleTitle")}</p>
+              <p className="mt-1 text-body-sm text-fg-muted">{t("cards.exampleMeta")}</p>
+              <p className="mt-4 text-h3 tabular-nums">
+                {formatMoney(715, "RON", l, { decimals: 0 })}
+                <span className="text-body-sm font-regular text-fg-muted">{` ${t("cards.perWeek")}`}</span>
+              </p>
+            </div>
+          </Card>
+        </div>
+      </DesignSection>
+
+      <DesignSection id="table" title={t("sections.table")}>
+        <DataTable
+          caption={t("table.caption")}
+          rows={[...demoPayments]}
+          rowKey={(row) => row.id}
+          columns={[
+            { key: "date", header: t("table.date"), render: (row) => formatDate(row.date, l) },
+            {
+              key: "description",
+              header: t("table.description"),
+              render: (row) =>
+                row.kind === "rent" ? t("table.rent", { week: row.week }) : t("table.deposit"),
+            },
+            {
+              key: "amount",
+              header: t("table.amount"),
+              numeric: true,
+              render: (row) => formatMoney(row.amount, "RON", l),
+            },
+          ]}
+        />
+      </DesignSection>
+
+      <DesignSection id="stepper" title={t("sections.stepper")}>
+        <Stepper
+          label={t("stepper.label")}
+          current={1}
+          steps={onboardingSteps.map((key) => ({ id: key, label: t(`stepper.${key}`) }))}
+        />
+      </DesignSection>
+
+      <DesignSection id="timeline" title={t("sections.timeline")}>
+        <Timeline
+          items={timelineSteps.map((step) => ({
+            id: step.key,
+            date: formatDate(step.date, l),
+            title: t(`timeline.${step.key}`),
+            body: t(`timeline.${step.key}Body`),
+            done: step.done,
+          }))}
+        />
+      </DesignSection>
+
+      <DesignSection id="empty" title={t("sections.empty")}>
+        <div className="lg:w-2/3">
+          <EmptyState
+            title={t("empty.title")}
+            body={t("empty.body")}
+            action={<Button>{t("empty.action")}</Button>}
+          />
+        </div>
+      </DesignSection>
+
+      <DesignSection
+        id="overlays"
+        title={`${t("sections.toast")} · ${t("sections.modal")} · ${t("sections.sheet")}`}
+        note={t("notes.sheet")}
+      >
+        <div className="flex flex-wrap gap-4">
+          <ToastDemo />
+          <ModalDemo />
+          <SheetDemo />
+        </div>
+      </DesignSection>
+
+      <DesignSection id="calculator" title={t("sections.calculator")} note={t("notes.calculator")}>
+        <CalculatorDemo />
       </DesignSection>
 
       <DesignSection id="dark" title={t("sections.dark")} note={t("notes.dark")}>

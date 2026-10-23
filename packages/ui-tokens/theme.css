@@ -77,6 +77,8 @@
   --spacing-control: 3rem;
   --spacing-control-large: 3.5rem;
   --container-content: 80rem;
+  --container-sidebar: 16rem;
+  --container-dialog: 35rem;
   --radius-control: 0.5rem;
   --radius-card: 0.75rem;
   --radius-pill: 9999px;
